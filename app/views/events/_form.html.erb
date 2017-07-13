@@ -1,0 +1,9 @@
+<%= simple_form_for @event do |f| %>
+  <%= f.input :name %>
+
+  <%= f.simple_fields_for :address do |address| %>
+    <%= render :partial => 'shared/address/form', :locals => {:f => address} %>
+  <% end %>
+  
+  <%= f.button :submit %>
+<% end %>
